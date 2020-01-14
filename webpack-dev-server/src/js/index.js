@@ -1,3 +1,10 @@
-import '../css/index.css'
+import '../css/index.css';
+import text from './text.js';
 
-document.body.innerHTML = "<p>Hola Mundo desde WebPack. Index</p>";
+text();
+
+if (module.hot) {
+    module.hot.accept('./text.js', function() {
+        text();
+    });
+}
