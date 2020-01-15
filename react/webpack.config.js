@@ -36,7 +36,8 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            title: 'Babel'
+            title: 'Babel',
+            template: path.resolve(__dirname, 'index.html')
         })
     ]
 }
