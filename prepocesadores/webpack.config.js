@@ -32,6 +32,30 @@ module.exports = {
                 ]
             },
             {
+                test: /\.less$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'less-loader'
+                ]
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.styl$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'stylus-loader'
+                ]
+            },
+            {
                 test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
                 use: {
                     loader: 'url-loader',
