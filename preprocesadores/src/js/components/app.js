@@ -14,14 +14,16 @@ function App() {
     function handleClick(){
         setLoaderList(data.loaders);
     }
+    //<video src={video} with={360} controls poster={logo}></video>
     return (
         <div>
             <p className="sass">Esto es sass</p>
             <p className="less">Esto es less</p>
             <p className="stylus">Esto es stylus</p>
+            <p className="post-css">Esto es postcss</p>
             <p>Que bonito es lo bonito hecho en react</p>
             <div>
-                <video src={video} with={360} controls poster={logo}></video>
+                Vacio
             </div>
             <div>
                 <img src={logo} alt="" width={40} />
