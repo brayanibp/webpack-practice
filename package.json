@@ -16,7 +16,8 @@
     "build-babel": "webpack-dev-server --config ./babel/webpack.config.js",
     "build-react": "webpack-dev-server --config ./react/webpack.config.js",
     "build-url-loader": "webpack-dev-server --config ./url-loader/webpack.config.js",
-    "build-prepo": "webpack-dev-server --config ./preprocesadores/webpack.config.js"
+    "build-prepo": "webpack-dev-server --config ./preprocesadores/webpack.config.js",
+    "build-prevent-dupli": "webpack --config ./prevent-duplication/webpack.config.js"
   },
   "keywords": [
     "webpack"
