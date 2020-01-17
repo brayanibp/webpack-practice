@@ -19,7 +19,9 @@
     "build-prepo": "webpack-dev-server --config ./preprocesadores/webpack.config.js",
     "build-prevent-dupli": "webpack --config ./prevent-duplication/webpack.config.js",
     "build-dll": "webpack --config ./dll/webpack.dll.config.js",
-    "build-dll-pro": "webpack --config ./dll/webpack.config.js"
+    "build-dll-pro": "webpack --config ./dll/webpack.config.js",
+    "build-dynamic-dll": "webpack --config ./dynamic-imports/webpack.dll.config.js",
+    "build-dynamic": "webpack --config ./dynamic-imports/webpack.config.js"
   },
   "keywords": [
     "webpack"
