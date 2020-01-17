@@ -11,8 +11,10 @@ import '../../stylus/stylus.styl';
 console.log(data);
 function App() {
     const [loaderList, setLoaderList] = useState([]);
-    function handleClick(){
+    async function handleClick(){
         setLoaderList(data.loaders);
+        const { alerta } = await import('./alert.js');
+        alerta('OMG este modulo es asincrono')
     }
     //<video src={video} with={360} controls poster={logo}></video>
     return (
