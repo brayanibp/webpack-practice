@@ -18,7 +18,7 @@
     "build-url-loader": "webpack-dev-server --config ./url-loader/webpack.config.js",
     "build-prepo": "webpack-dev-server --config ./preprocesadores/webpack.config.js",
     "build-prevent-dupli": "webpack --config ./prevent-duplication/webpack.config.js",
-    "build-dll": "webpack --config ./dll/webpack.config.js",
+    "build-dll": "webpack --config ./dll/webpack.dll.config.js",
     "build-dll-pro": "webpack --config ./dll/webpack.config.js"
   },
   "keywords": [

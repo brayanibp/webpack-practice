@@ -24,6 +24,7 @@ function App() {
             <p>Que bonito es lo bonito hecho en react</p>
             <div>
                 Vacio
+                <video src={video} with={360} controls poster={logo}></video>
             </div>
             <div>
                 <img src={logo} alt="" width={40} />

@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -22,7 +23,9 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    'style-loader',
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
                     {
                         loader: 'css-loader',
                         options: {
@@ -35,7 +38,9 @@ module.exports = {
             {
                 test: /\.less$/,
                 use: [
-                    'style-loader',
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
                     'css-loader',
                     'less-loader'
                 ]
@@ -43,7 +48,9 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    'style-loader',
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
                     'css-loader',
                     'sass-loader'
                 ]
@@ -51,7 +58,9 @@ module.exports = {
             {
                 test: /\.styl$/,
                 use: [
-                    'style-loader',
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
                     'css-loader',
                     'stylus-loader'
                 ]
@@ -68,10 +77,17 @@ module.exports = {
         ]
     },
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'css/[name].css',
+            chunkFilename: 'css/[id].css'
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            title: 'Babel',
+            title: 'Dynamic Link Library',
             template: path.resolve(__dirname, 'index.html')
+        }),
+        new webpack.DllReferencePlugin({
+            manifest: require('./modules-manifest.json')
         })
     ]
 }
