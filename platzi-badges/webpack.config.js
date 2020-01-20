@@ -4,6 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -14,6 +16,12 @@ module.exports = {
         filename: 'js/[name].[hash].js',
         publicPath: 'http://localhost:3001/',
         chunkFilename: 'js/[id].[chunkhash].js'
+    },
+    optimization: {
+        minimizer: [
+            new TerserJSPlugin(),
+            new OptimizeCSSAssetsPlugin()
+        ]
     },
     module: {
         rules: [
